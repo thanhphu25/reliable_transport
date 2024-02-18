@@ -1,5 +1,5 @@
 PYTHON_PATH=$(which python3)
-FOLDER=../solution/RPT-opt
+FOLDER=../RTP-opt
 PORT_RECV=40000
 PORT_SEND=50000
 WINDOW_SIZE=128
