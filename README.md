@@ -6,6 +6,15 @@
 * Understand the mechanisms required to reliably transfer data
 * Understand how different sliding window protocols work
 
+## Getting Started
+
+To start this project, you will first need to get the [infrastructure setup](https://github.com/minlanyu/cs145-site/blob/spring2024/infra.md) and clone this repository with submodules
+```
+git clone --recurse-submodules <your repository>
+```
+
+Run `./pull_update.sh` to pull project updates (if any). You might need to merge conflicts manually: most of the time, you just need to accept incoming changes; reach to TF if it is hard to merge. This step also applies to all subsequent projects. 
+
 ## Overview
 
 In this project, you will build a simple reliable transport protocol, RTP, **on top of UDP**. Your RTP implementation must provide in­ order, reliable delivery of UDP datagrams in the presence of events like packet loss, delay, corruption, duplication, and re­ordering.
