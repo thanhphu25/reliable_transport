@@ -169,18 +169,18 @@ Before the test, you should put these files to the same folder:
     Test files: proxy.py, test_message.txt, compare.sh
 
 Following the fours steps to test: 
-1. start the receiver: `python receiver.py [port_recv] [window_size] > [output_file]`
-    * Eg, `python receiver.py 40000 128 > output.txt`. 
+1. start the receiver: `python sender_receiver/receiver.py [port_recv] [window_size] > [output_file]`
+    * Eg, `python sender_receiver/receiver.py 40000 128 > test_scripts/output.txt`. 
     * Receiver listens on port 40000.
-2. start the proxy: `python proxy.py localhost [port_send] localhost [port_recv] [error_type]`
-    * Eg, `python proxy.py localhost 50000 localhost 40000 0123`. 
+2. start the proxy: `python test_scripts/proxy.py localhost [port_send] localhost [port_recv] [error_type]`
+    * Eg, `python test_scripts/proxy.py localhost 50000 localhost 40000 0123`. 
     * Proxy listens on port 50000 (waiting for connection from sender); proxy connects to port 40000; 
     * 0123 means we choose all four types of errors. You may check proxy.py code to see how we inject different types of errors. 
-3. start the sender: `python sender.py localhost [port_send] [window_size] < test_message.txt`
-    * Eg, `python sender.py localhost 50000 128 < test_message.txt`. 
+3. start the sender: `python sender_receiver/sender.py localhost [port_send] [window_size] < test_scripts/test_message.txt`
+    * Eg, `python sender_receiver/sender.py localhost 50000 128 < test_scripts/test_message.txt`. 
     * Sender connects to port 50000 (where proxy is listening on -- here completes the packet forwarding). 
-4. compare result: `bash compare.sh [output_file] test_message.txt`
-    * Eg, `bash compare.sh output.txt test_message.txt`. 
+4. compare result: `bash test_scripts/compare.sh [output_file] test_message.txt`
+    * Eg, `bash test_scripts/compare.sh test_scripts/output.txt test_scripts/test_message.txt`. 
     * You should delete the old `output.txt` before testing your new solution. 
     * If you see *SUCCESS: Message received matches message sent!* printed, then you solution passes the test!
 
