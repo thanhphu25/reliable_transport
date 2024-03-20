@@ -13,7 +13,7 @@ def sender(receiver_ip, receiver_port, window_size):
     pkt_header = PacketHeader(type=2, seq_num=10, length=14)
     pkt_header.checksum = compute_checksum(pkt_header / "Hello, world!\n")
     pkt = pkt_header / "Hello, world!\n"
-    s.sendto(str(pkt), (receiver_ip, receiver_port))
+    s.sendto(bytes(pkt), (receiver_ip, receiver_port))
 
 def main():
     """Parse command-line arguments and call sender function """
