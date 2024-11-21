@@ -165,8 +165,9 @@ We provide a proxy-based testing script to help verify the correctness of your s
 The testing script initiates connections with your receiver and sender separately, and forward packets with random delay, reordering, drops, or modifications. Your solution should pass the testing script for any window size.
 
 Before the test, you should put these files to the same folder:
-    Solution files: receiver.py, send.py, util.py
-    Test files: proxy.py, test_message.txt, compare.sh
+
+Solution files: receiver.py, send.py, util.py
+Test files: proxy.py, test_message.txt, compare.sh
 
 Following the fours steps to test: 
 1. start the receiver: `python sender_receiver/receiver.py [port_recv] [window_size] > [output_file]`
