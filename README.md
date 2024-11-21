@@ -41,7 +41,7 @@ PacketHeader:
   int checksum;  // 32-bit CRC
 ```
 
-To initiate a connection, `sender` starts with a `START` packet and waits for an ACK for this `START` packet. After sending the `START` message, additional packets in the same connection are sent using the `DATA` message type, adjusting `seq_num` appropriately. After everything has been transferred, the connection should be terminated with `sender` sending an `END` message and waiting for the corresponding ACK for this message.
+To initiate a connection, `sender` starts with a `START` packet and waits for an ACK for this `START` packet. You do not have to handle the case in which the `START` ACK is delayed or dropped. After sending the `START` message, additional packets in the same connection are sent using the `DATA` message type, adjusting `seq_num` appropriately. After everything has been transferred, the connection should be terminated with `sender` sending an `END` message and waiting for the corresponding ACK for this message.
 
 For each connection, `seq_num` starts from 0 (i.e., the first `START` packet has `seq_num` 0). The `seq_num` of ACK for `START` is 1. The `seq_num` of `DATA` packets then starts from 1 and gets incremented following the detailed specifications below. 
 
@@ -68,7 +68,7 @@ Overall, this project has the following components:
 
 We provide scaffolding code in `sender_reciver`. 
 
-* Use `sudo pip install scapy` in the VM to install `scapy` package required by this project.
+* Use `sudo pip install scapy==2.4.0` in the VM to install `scapy` package required by this project.
 
 <a name="part1"></a>
 ## Part 1: Implement `sender`
@@ -162,7 +162,7 @@ NOTE: Your code with optimizations in Part 3 should still pass the testing below
 ## Testing Your Solutions
 
 We provide a proxy-based testing script to help verify the correctness of your solution. 
-The testing script initiates connections with your receiver and sender separately, and forward packets with random delay, reordering, drops, or modifications. 
+The testing script initiates connections with your receiver and sender separately, and forward packets with random delay, reordering, drops, or modifications. Your solution should pass the testing script for any window size.
 
 Before the test, you should put these files to the same folder:
     Solution files: receiver.py, send.py, util.py
