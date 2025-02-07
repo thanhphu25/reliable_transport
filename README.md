@@ -217,4 +217,4 @@ Your code in both Part 2 (RTP-base) and Part 3 (RTP-opt) should pass our testing
 This programming project is based on UC Berkeley's Project 2 from EE 122: Introduction to Communication Networks, and Johns Hopkins University's Project 2 from EN.601.414/614: Computer Networks.
 
 ## Survey
-Please fill out the Canvas survey after completing this project. 2 extra points will be given once you have finished it.
+Please fill up the survey when you finish your project: [Survey link](https://forms.gle/Nk9Vq3TZUckkkc8R9).
