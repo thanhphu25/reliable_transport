@@ -203,8 +203,6 @@ You are expected to submit the following documents:
 1. The source code for `sender` and `receiver` from parts 1 and 2: all source files should be in a folder called `RTP-base`.
 2. The source code for `sender` and `receiver` from part 3: all source files should be in a folder called `RTP-opt`.
 
-Please make sure all files are in the `project4/` folder of your master branch.
-
 ### Grading 
 
 Your code in both Part 2 (RTP-base) and Part 3 (RTP-opt) should pass our testing scripts with all four types of network errors. The total grades is 100:
