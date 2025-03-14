@@ -11,7 +11,7 @@ PYTHON_PATH=$(which python3)
 PORT_RECV=40000
 PORT_SEND=50000
 WINDOW_SIZE=128
-ERROR_TYPE=0123
+ERROR_TYPES=0123
 
 # Kill previous ports first
 PREV_PIDS=$(sudo lsof -ti:$PORT_RECV,$PORT_SEND)
@@ -26,7 +26,7 @@ echo -e " (process $RECEIVER_PID)"
 sleep 1
 
 echo -n "Step 2: Start the proxy"
-$PYTHON_PATH $DIR/proxy.py localhost $PORT_SEND localhost $PORT_RECV $ERROR_TYPE > /dev/null &
+$PYTHON_PATH $DIR/proxy.py localhost $PORT_SEND localhost $PORT_RECV $ERROR_TYPES > /dev/null &
 PROXY_PID=$!
 echo -e " (process $PROXY_PID)"
 sleep 1

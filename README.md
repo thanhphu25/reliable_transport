@@ -160,7 +160,8 @@ For manual testing, there are four steps:
 # Start the receiver
 python RTP-base/receiver.py localhost $PORT_RECV $WINDOW_SIZE > RTP-base/output.txt
 # Start the proxy
-python test_scripts/proxy.py localhost $PORT_SEND localhost $PORT_RECV $ERROR_TYPE
+# Run python test_scripts/proxy.py -h to check its usage
+python test_scripts/proxy.py localhost $PORT_SEND localhost $PORT_RECV $ERROR_TYPES
 # Start the sender
 python RTP-base/sender.py localhost $PORT_SEND $WINDOW_SIZE < test_scripts/test_message.txt
 # Compare the result
@@ -179,7 +180,7 @@ python RTP-base/sender.py localhost 50000 128 < test_scripts/test_message.txt
 In the example above,
 
 - Receiver listens on port 40000;
-- Proxy listens on port 50000 (waiting for sender connection) and connects to port 40000 (where the client is listening on);
+- Proxy listens on port 50000 (waiting for sender connection) and connects to port 40000 (where the client is listening on); all error types are included (`0123`);
 - Sender connects to port 50000 (where the proxy is listening on) and here completes the packet forwarding;
 - Compare `RTP-base/output.txt` (output of the receiver) to `test_scripts/test_message.txt` (input to the sender).
 
