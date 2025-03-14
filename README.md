@@ -101,7 +101,7 @@ options:
   -h, --help     show this help message and exit
 ```
 
-Note that the sender reads the message to be transferred from stdin. You may want to create a file that contains the message (either text or binary) and redirect stdin to that file.
+Note that the sender reads the message to be transferred from stdin. You may want to create a file that contains the message (either text or binary) and redirect stdin to that file. See [testing](#testing-your-solutions-part-1--part-2) for more details.
 
 ## Part 2: Implement `receiver`
 
@@ -122,7 +122,6 @@ If the next expected `seq_num` is `N`, `receiver` will drop all packets with `se
 `receiver` can exit once it sends the ACK packet of the `END` message.
 
 > [!TIP]
-> Some useful debugging tips:
 > - You can try to print the state maintained (e.g. sequence number interval of current window) in the sender and receiver.
 > - You need to use `sys.stdout.flush()` to force everything in the buffer to the terminal ([learn more](https://stackoverflow.com/questions/10019456/usage-of-sys-stdout-flush-method)).
 
@@ -140,7 +139,7 @@ options:
   -h, --help     show this help message and exit
 ```
 
-Note that the receiver prints the received message to stdout. You may want to redirect output to a file for comparison with the message sent.
+Note that the receiver prints the received message to stdout. You may want to redirect output to a file for comparison with the message sent. See [testing](#testing-your-solutions-part-1--part-2) for more details.
 
 ## Testing Your Solutions (Part 1 & Part 2)
 
