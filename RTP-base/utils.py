@@ -1,7 +1,7 @@
 import binascii
 
-from scapy.all import Packet
-from scapy.all import IntField
+from scapy.all import Packet, IntField
+
 
 class PacketHeader(Packet):
     name = "PacketHeader"
@@ -12,5 +12,6 @@ class PacketHeader(Packet):
         IntField("checksum", 0),
     ]
 
+
 def compute_checksum(pkt):
-    return binascii.crc32(bytes(pkt)) & 0xffffffff
+    return binascii.crc32(bytes(pkt)) & 0xFFFFFFFF
