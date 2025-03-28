@@ -40,7 +40,7 @@ def main():
 
     receiver(args.receiver_ip, args.receiver_port, args.window_size)
 
-    print("test mot ti")
+    print("test lan 2")
 
 
 if __name__ == "__main__":
