@@ -40,6 +40,8 @@ def main():
 
     receiver(args.receiver_ip, args.receiver_port, args.window_size)
 
+    print("test mot ti")
+
 
 if __name__ == "__main__":
     main()
